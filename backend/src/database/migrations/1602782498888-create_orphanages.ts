@@ -31,7 +31,7 @@ export class createOrphanages1602782498888 implements MigrationInterface {
                     precision: 2
                 },
                 {
-                    name: 'abount',
+                    name: 'about',
                     type: 'text'
                 },
                 {
