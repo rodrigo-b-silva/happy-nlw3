@@ -38,14 +38,20 @@ export default {
     
     const orphanagesRepository = getRepository(Orphanage);
 
-    console.log(req.files)
     const requestImages = req.files as Express.Multer.File[];
     const images = requestImages.map(image => {
       return { path: image.filename }
     });
     
     const data = {
-      name, latitude, longitude, about, instructions, opening_hours, open_on_weekends, images
+      name, 
+      latitude, 
+      longitude, 
+      about, 
+      instructions, 
+      opening_hours, 
+      open_on_weekends: open_on_weekends === 'true', 
+      images
     };
 
     const schema = Yup.object().shape({
